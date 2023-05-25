@@ -27,6 +27,9 @@ def home_view(request):
     free = "#9EFF7C"
     occupied = "#E96B6B"
 
+    hours = ["9h", "10h", "11h", "12h", "13h", "14h", "15h", "16h", "17h", "18h"]
+
+
     r704h = [free, free, free, free, free, free, free, free, free, free]
     r705h = [free, free, free, free, free, free, free, free, free, free]
     r706h = [free, free, free, free, free, free, free, free, free, free]
