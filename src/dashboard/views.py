@@ -24,6 +24,24 @@ def home_view(request):
     now = datetime.now(tz_pa)
     current_time = now.strftime("%H:%M")
 
+    free = "#9EFF7C"
+    occupied = "#E96B6B"
+
+    r704h = [free, free, free, free, free, free, free, free, free, free]
+    r705h = [free, free, free, free, free, free, free, free, free, free]
+    r706h = [free, free, free, free, free, free, free, free, free, free]
+    r708h = [free, free, free, free, free, free, free, free, free, free]
+    r709h = [free, free, free, free, free, free, free, free, free, free]
+    r710h = [free, free, free, free, free, free, free, free, free, free]
+    r711h = [free, free, free, free, free, free, free, free, free, free]
+    r616h = [free, free, free, free, free, free, free, free, free, free]
+    r615h = [free, free, free, free, free, free, free, free, free, free]
+    r610h = [free, free, free, free, free, free, free, free, free, free]
+    r609h = [free, free, free, free, free, free, free, free, free, free]
+    r608h = [free, free, free, free, free, free, free, free, free, free]
+    r604h = [free, free, free, free, free, free, free, free, free, free]
+    r601h = [free, free, free, free, free, free, free, free, free, free]
+
     return render(request, 'main.html', {
         'r704': r704, 
         'r705': r705, 
@@ -39,5 +57,19 @@ def home_view(request):
         'r608': r608, 
         'r604': r604, 
         'r601': r601,
-        'current_time': current_time
+        'current_time': current_time,
+        'r704h': r704h,
+        'r705h': r705h,
+        'r706h': r706h,
+        'r708h': r708h,
+        'r709h': r709h,
+        'r710h': r710h,
+        'r711h': r711h,
+        'r616h': r616h,
+        'r615h': r615h,
+        'r610h': r610h,
+        'r609h': r609h,
+        'r608h': r608h,
+        'r604h': r604h,
+        'r601h': r601h,
         })
