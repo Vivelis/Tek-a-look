@@ -1,4 +1,6 @@
 from django.shortcuts import render
+from datetime import datetime
+import pytz
 
 # Create your views here.
 def home_view(request):
@@ -17,6 +19,11 @@ def home_view(request):
     r604 = "604 - Kotlin room"
     r601 = "601 - C room"
 
+
+    tz_pa = pytz.timezone('Europe/paris') 
+    now = datetime.now(tz_pa)
+    current_time = now.strftime("%H:%M")
+
     return render(request, 'main.html', {
         'r704': r704, 
         'r705': r705, 
@@ -31,5 +38,6 @@ def home_view(request):
         'r609': r609, 
         'r608': r608, 
         'r604': r604, 
-        'r601': r601 
+        'r601': r601,
+        'current_time': current_time
         })
