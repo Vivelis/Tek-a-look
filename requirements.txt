@@ -1,1 +1,4 @@
 Django
+requests
+bs4
+pytz
