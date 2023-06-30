@@ -1864,6 +1864,7 @@
             setTime(hour);
             setDate();
             setQuote();
+            setToCome(hour);
         }
     }
 
@@ -2024,6 +2025,31 @@
         var current_quote = quotes[Math.floor(Math.random() * quotes.length)];
 
         document.getElementById("quote").innerHTML = current_quote;
+    }
+
+    function setToCome(hour) {
+        let balise = document.getElementById("toCome");
+
+        balise.innerHTML = "À venir :<br>";
+        $.ajax({
+            type: 'GET',
+            url: "{% url 'extract_activities' %}",
+            success: function (response) {
+                for (let roomName in response) {
+                    const reg = new RegExp("r\\d+h");
+                    if (reg.test(roomName)) {
+                        for (let i = 0; i < 9; i++) {
+                            if (response[roomName][i] === "#E96B6B" && (i + 9) > hour) {
+                                balise.innerHTML += "<p>" + (i + 9) +"h00 - " + roomName + "</p>";
+                            }
+                        }
+                    }
+                }
+            },
+            error: function (response) {
+                console.log("error" + response)
+            }
+        })
     }
 
 </script>
