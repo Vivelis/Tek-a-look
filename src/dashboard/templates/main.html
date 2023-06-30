@@ -1814,7 +1814,7 @@
     <div style="position: absolute;
         width: 276px;
         height: 84px;
-        left: 890px;
+        left: 898px;
         top: 939px;
 
         font-family: 'Inter';
@@ -1882,8 +1882,14 @@
     function setDate() {
         let date = time.getDate();
         let month = time.getMonth() + 1;
-        let year = time.getFullYear();
+        let year = time.getFullYear() - 2000;
 
+        if (month < 10) {
+            month = "0" + month;
+        }
+        if (date < 10) {
+            date = "0" + date;
+        }
         let currentDate = date + "/" + month + "/" + year;
 
         document.getElementById("date").innerHTML = currentDate;
